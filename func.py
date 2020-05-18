@@ -1,19 +1,23 @@
 import re
 
 def cadastrar(vazamento):
+    check = "S"
     resp = "S"
     while resp == "S":
         tag = input("Informe o ID do vazamento >> ")
-        email = input("Qual e-mail vazado?\n").upper()  
-        if re.match("[^@]+@[^@]+\.[^@]+", email):
-            resp = "N"
-        else:
-            print("e-mail invalido informado") 
+        while check == "S":
+            email = input("Qual e-mail vazado?\n").upper()  
+            if re.match("[^@]+@[^@]+\.[^@]+", email):
+                check = "N"
+            else:
+                print("e-mail invalido informado")
+                check = "S"
+        check = "S"
         vazamento[tag] = [
             email,
             input("P4ssw0rd:\n"),
             ]
-        resp = input("\nDeseja cadastrar mais ? S/N\n").upper()
+        resp = input("\nDeseja cadastrar mais? (S/N)\n").upper()
 
 def exibir(vazamento):
     for tag, lista in vazamento.items():

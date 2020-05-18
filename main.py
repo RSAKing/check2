@@ -8,7 +8,7 @@ emails = {}
 
 resp = "N"
 while resp == "N":
-    print("\nEscolha uma opção abaixo:\n")
+    print("\nSelecione uma opção abaixo:\n")
     print("Insira 1 para Cadastrar um vazamento\n")
     print("Insira 2 para Listar vazamentos cadastrados\n")
     print("Insira 3 para Buscar um email (pelo ID)\n")
